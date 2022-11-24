@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0e1833;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+
+.wrapper {
+  background-color: white;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+}
+
+.bottom-line {
+  height: 4px;
+  background-color: #00d4ff;
+}
+
+.tabs {
+  display: flex;
+}
+
+[role='tabpanel'] {
+  background: var(--yellow);
+  padding: 2rem;
+}
+
+button {
+  color: black;
+  cursor: pointer;
+  padding: 20px;
+  width: 120px;
+}
+
+button[aria-selected='true'] {
+  box-shadow: none;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: black;
+  border-top: 5px solid #00d4ff;
+  overflow: hidden;
+  color: white;
+}
+
+button:focus {
+  outline: none;
+  border: 2px solid #00d4ff;
+}
+button:hover {
+  outline: 0;
+}
