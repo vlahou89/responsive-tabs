@@ -57,3 +57,47 @@ button:focus {
 button:hover {
   outline: 0;
 }
+
+@media screen and (min-width: 320px) {
+  [role='tablist'] {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wrapper {
+    width: 90vw;
+    margin: auto;
+  }
+
+  button {
+    display: block;
+    border: none;
+    padding: 10px;
+    font-size: 10px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 20px;
+    padding-bottom: 20px;
+    margin-top: -20px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (min-width: 481px) {
+  [role='tablist'] {
+    display: flex;
+    flex-direction: row;
+  }
+  .wrapper {
+    width: 70vw;
+  }
+  .tabs {
+    flex-direction: column;
+  }
+}
