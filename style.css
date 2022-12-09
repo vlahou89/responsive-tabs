@@ -1,6 +1,11 @@
+/* General Styling - Mobile first*/
 * {
   margin: 0;
   padding: 0;
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -8,16 +13,17 @@ body {
   align-items: center;
   justify-content: center;
   margin: auto;
+  display: flex;
+  min-height: 100%;
 }
 
-.wrapper {
-  background-color: white;
-  margin: auto;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 500px;
+ul[role='tablist'] {
+  list-style: none;
+  padding-left: 0;
+}
+
+p {
+  font-size: 14px;
 }
 
 .bottom-line {
@@ -25,39 +31,81 @@ body {
   background-color: #00d4ff;
 }
 
+/* Tabs */
+/* Center the tabs div */
+.wrapper {
+  background-color: white;
+  margin: auto;
+  width: 90vw;
+}
+
+/* Decorate links and remove dec */
+.tab {
+  text-decoration-color: transparent;
+  background-color: whitesmoke;
+  color: #121212;
+  font-weight: bold;
+  font-size: clamp(0.88rem, calc(0.78rem + 0.49vw), 1.13rem);
+  width: 70px;
+}
+
+/* Selected Tab */
+.tab[aria-selected='true'] {
+  margin-left: -5px;
+  border-left: 5px solid #00d4ff;
+  color: rgba(0, 0, 0, 0.7);
+  background-color: black;
+  color: white;
+}
+
+/* Focused tab */
+.tab:focus-visible {
+  background-color: #00d4ff;
+  color: black;
+  outline: 0.2em solid transparent;
+}
+
+.tabpanel {
+  display: flex;
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1em;
+  padding: 1.5rem;
+  background-color: var(--bg);
+}
+
+/* hide non active panels */
+.tabpanel:not(:target):not(.visible) {
+  display: none;
+}
+
 .tabs {
   display: flex;
 }
 
-[role='tabpanel'] {
-  background: var(--yellow);
-  padding: 2rem;
-}
-
-button {
-  color: black;
+.tab {
+  display: flex;
+  flex-direction: row;
+  border: none;
+  padding: 10px;
+  font-size: 10px;
   cursor: pointer;
-  padding: 20px;
-  width: 120px;
+  text-align: center;
 }
 
-button[aria-selected='true'] {
-  box-shadow: none;
-  color: rgba(0, 0, 0, 0.7);
-  background-color: black;
-  border-top: 5px solid #00d4ff;
-  overflow: hidden;
-  color: white;
-}
-
-button:hover {
-  outline: 0;
-}
-
-@media screen and (min-width: 320px) {
-  [role='tablist'] {
+/* Styling for medium screens and above */
+@media screen and (min-width: 768px) {
+  .tabs {
     display: flex;
     flex-direction: column;
+    max-height: 50%;
+  }
+
+  .tablist {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
   }
 
   .wrapper {
@@ -65,8 +113,9 @@ button:hover {
     margin: auto;
   }
 
-  button {
-    display: block;
+  .tab {
+    display: flex;
+    flex-direction: column;
     border: none;
     padding: 10px;
     font-size: 10px;
@@ -74,26 +123,25 @@ button:hover {
     text-align: center;
   }
 
+  .wrapper {
+    width: 70vw;
+  }
+
+  .tab[aria-selected='true'] {
+    margin-top: -5px;
+    margin-left: 0px;
+    box-shadow: none;
+    color: rgba(0, 0, 0, 0.7);
+    background-color: black;
+    border-top: 5px solid #00d4ff;
+    border-left: 0;
+    overflow: hidden;
+    color: white;
+  }
+
   h1 {
     font-size: 20px;
     padding-bottom: 20px;
     margin-top: -20px;
-  }
-
-  p {
-    font-size: 14px;
-  }
-}
-
-@media screen and (min-width: 481px) {
-  [role='tablist'] {
-    display: flex;
-    flex-direction: row;
-  }
-  .wrapper {
-    width: 70vw;
-  }
-  .tabs {
-    flex-direction: column;
   }
 }

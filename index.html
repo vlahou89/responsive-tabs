@@ -1,87 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabs</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main>
-      <div class="wrapper">
-        <div class="tabs">
-          <div role="tablist" aria-label="Tab List">
-            <button role="tab" aria-selected="true" id="tab1">TAB 1</button>
-            <button role="tab" aria-selected="false" id="tab2">TAB 2</button>
-            <button role="tab" aria-selected="false" id="tab3">TAB 3</button>
-            <button role="tab" aria-selected="false" id="tab4">TAB 4</button>
-            <button role="tab" aria-selected="false" id="tab5">TAB 5</button>
-          </div>
-          <div role="tabpanel" aria-labelledby="tab1">
-            <h1>Tab 1 Content</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <div role="tabpanel" aria-labelledby="tab2" hidden>
-            <h1>Tab 2 Content</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <div role="tabpanel" aria-labelledby="tab3" hidden>
-            <h1>Tab 3 Content</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <div role="tabpanel" aria-labelledby="tab4" hidden>
-            <h1>Tab 4 Content</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <div role="tabpanel" aria-labelledby="tab5" hidden>
-            <h1>Tab 5 Content</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-        </div>
-        <div class="bottom-line"></div>
-      </div>
-    </main>
-    <script src="script.js"></script>
-  </body>
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Tabs</title>
+      <link rel="stylesheet" href="./style.css" />
+   </head>
+   <body>
+      <main>
+         <div class="wrapper">
+         <div class="tabs">
+            <ul id="tablist" role="tablist" class="tablist">
+               <!-- The presentation role and its synonym none remove 
+                    an element's implicit ARIA semantics from being exposed 
+                    to the accessibility tree. -->
+               <li role="presentation">
+                  <a  id="tab1" class="tab " role="tab" href="#panel1">
+                     <p>Tab 1</p>
+                  </a>
+               </li>
+               <li role="presentation">
+                  <a  id="tab2" class="tab " role="tab" href="#panel2">
+                     <p>Tab 2</p>
+                  </a>
+               </li>
+               <li role="presentation">
+                  <a id="tab3" class="tab" role="tab" href="#panel3" >
+                     <p>Tab 3</p>
+                  </a>
+               </li>
+               <li role="presentation">
+                  <a id="tab4" class="tab" role="tab" href="#panel4" >
+                     <p>Tab 4</p>
+                  </a>
+               </li>
+               <li role="presentation">
+                <a  id="tab5" class="tab" role="tab" href="#panel4">
+                   <p>Tab 5</p>
+                </a>
+             </li>
+            </ul>
+            <div >
+               <div
+                  class="tabpanel"
+                  role="tabpanel"
+                  tabindex="0"
+                  id="panel1"
+                  aria-labelledby="tab1"
+                  >
+                  <h1>Tab 1 Content</h1>
+                  <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                     reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                     nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+               </div>
+               <div
+                  class="tabpanel"
+                  role="tabpanel"
+                  tabindex="0"
+                  id="panel2"
+                  aria-labelledby="tab2"
+                  >
+                  <h1>Tab 2 Content</h1>
+                  <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                     reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                     nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+               </div>
+               <div
+                  class="tabpanel"
+                  role="tabpanel"
+                  tabindex="0"
+                  id="panel3"
+                  aria-labelledby="tab3"
+                  >
+                  <h1>Tab 3 Content</h1>
+                  <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                     reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                     nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+               </div>
+               <div
+                  class="tabpanel"
+                  role="tabpanel"
+                  tabindex="0"
+                  id="panel4"
+                  aria-labelledby="tab4"
+                  >
+                  <h1>Tab 4 Content</h1>
+                  <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                     reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                     nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+               </div>
+               <div
+                  class="tabpanel"
+                  role="tabpanel"
+                  tabindex="0"
+                  id="panel5"
+                  aria-labelledby="tab5"
+                  >
+                  <h1>Tab 5 Content</h1>
+                  <p>
+                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                     enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                     nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                     reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                     nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                     sunt in culpa qui officia deserunt mollit anim id est laborum.
+                  </p>
+               </div>
+            </div>
+         </div>
+         <div class="bottom-line"></div>
+
+      </main>
+      <script src="script.js"></script>
+   </body>
 </html>
